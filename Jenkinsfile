@@ -1,4 +1,5 @@
 node('gitleaks_image') {
+   try{
         stage('SCM-checkout') {
                         checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], \
                                 userRemoteConfigs: [[credentialsId: 'admingithub', url: 'git@github.com:gem-abhay/gitleaks_jenkins.git']]])
@@ -12,4 +13,7 @@ node('gitleaks_image') {
             echo ${reports_dir}
           }
   }
+   }catch(exception Error){
+           echo "${Error}"
         }
+}

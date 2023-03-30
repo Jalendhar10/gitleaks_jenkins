@@ -13,7 +13,7 @@ node('gitleaks_image') {
             echo ${reports_dir}
           }
   }
-   }catch(exception Error){
+   } catch (Exception Error){
            echo "${Error}"
         }
 }

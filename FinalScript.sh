@@ -1,4 +1,3 @@
-  GNU nano 6.2                                                                                                      Master1.sh                                                                                                                
 #!/bin/bash
 
 repos=(

@@ -3,12 +3,12 @@
 
 repos=(
 # Add URLS For Repo you want to clone
- "https://github.com/sajal55/leaks"
+ ""
 )
 
 # These are the paths where reports of scans and  repos will be cloned
-base_dir="/home/ubuntu/Tools/gitleaks" # here repos will be cloned
-reports_dir="/home/ubuntu/Tools/gitleaks/Leaks_Reports" #here reports will be stored
+base_dir="/home/tools" # here repos will be cloned
+reports_dir="/home/tools/Leaks_Reports" #here reports will be stored
 # Loop through each repository and clone it
 for repo_url in "${repos[@]}"
 do

@@ -3,7 +3,7 @@
 
 repos=(
 # Add URLS For Repo you want to clone
- ""
+ "https://github.com/sajal55/leaks_for_testing"
 )
 
 # These are the paths where reports of scans and  repos will be cloned

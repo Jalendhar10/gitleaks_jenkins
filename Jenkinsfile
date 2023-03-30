@@ -10,7 +10,7 @@ node('gitleaks_image') {
         stage('gitleak'){
           container('gitleaks-runner'){
             sh'''./FinalScript.sh'''
-            echo ${reports_dir}
+            sh"echo '${reports_dir}'"
           }
   }
    } catch (Exception Error){

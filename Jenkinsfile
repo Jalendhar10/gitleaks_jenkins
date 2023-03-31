@@ -9,8 +9,8 @@ node('gitleaks_image') {
         }
         stage('gitleak'){
           container('gitleaks-runner'){
-            sh'''./FinalScript.sh'''
             sh 'ls -la'
+            sh'''./FinalScript.sh'''
           }
   }
    } catch (Exception Error){

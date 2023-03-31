@@ -10,13 +10,13 @@ node('gitleaks_image') {
         stage('gitleak'){
           container('gitleaks-runner'){
             sh 'ls -la'
+             sh'pwd'
             sh'''./FinalScript.sh'''
             sh 'echo current_report=/home/tools/report_leaks > report.json'
             archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
           }
   }
-   } finally {
-//          sh 'echo current_report=/home/tools/report_leaks > report.json'
-//          archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
-//    }
+   } catch (Exception Report) {
+      echo ${report}
+   }
 }

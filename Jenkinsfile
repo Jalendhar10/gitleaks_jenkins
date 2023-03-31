@@ -13,7 +13,8 @@ node('gitleaks_image') {
             sh'''./FinalScript.sh'''
           }
   }
-   } catch (Exception Error){
-           echo "${Error}"
-        }
+   } finally {
+         sh 'echo current_report=/home/tools/report_leaks > report.json'
+         archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
+   }
 }

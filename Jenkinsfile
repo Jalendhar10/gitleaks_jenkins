@@ -11,6 +11,9 @@ node('gitleaks_image') {
           container('gitleaks-runner'){
             sh'''./FinalScript.sh'''
           }
+        stage('checking folders'){
+              container('gitleaks-runner'){
+                 sh '''echo ls -la'''
   }
    } catch (Exception Error){
            echo "${Error}"

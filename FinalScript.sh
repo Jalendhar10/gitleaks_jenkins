@@ -1,5 +1,3 @@
-#!/bin/bash
-
 repos=(
 # Add URLS For Repo you want to clone
  "https://github.com/sajal55/leaks_for_testing"
@@ -22,14 +20,16 @@ do
   report_file="$reports_dir/$repo_name.json"
   cd /home/tools/gitleaks
  ./gitleaks detect -s "$repo_path" -r "$report_file" 
+
+  # Archive the generated report
+  archive_file="$repo_name.json"
+  archive_path="$reports_dir/$archive_file"
+  archive_dir=$(basename "$reports_dir")
+  cd "$reports_dir"
+  zip -r "$archive_file.zip" "$repo_name.json"
+  cd -
+  archive_path="$reports_dir/$archive_file.zip"
+  archive_dir_path="$archive_dir/$archive_file.zip"
+  echo "Archiving $archive_dir_path"
+  archiveArtifacts "$archive_path"  
 done
-
-
-
-
-
-
-
-
-
-

@@ -11,10 +11,12 @@ node('gitleaks_image') {
           container('gitleaks-runner'){
             sh 'ls -la'
             sh'''./FinalScript.sh'''
+            sh 'echo current_report=/home/tools/report_leaks > report.json'
+            archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
           }
   }
    } finally {
-         sh 'echo current_report=/home/tools/report_leaks > report.json'
-         archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
-   }
+//          sh 'echo current_report=/home/tools/report_leaks > report.json'
+//          archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
+//    }
 }

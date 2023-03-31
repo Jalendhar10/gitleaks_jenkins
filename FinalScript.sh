@@ -20,7 +20,8 @@ do
 
   # Scan the repository for secrets using Gitleaks and Store results
   report_file="$reports_dir/$repo_name.json"
- /home/tools/gitleaks/gitleaks detect -s "$repo_path" -r "$report_file" 
+  cd /home/tools/gitleaks
+ ./gitleaks detect -s "$repo_path" -r "$report_file" 
 done
 
 

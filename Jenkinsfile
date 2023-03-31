@@ -2,7 +2,7 @@ node('gitleaks_image') {
    try{
         stage('SCM-checkout') {
                         checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], \
-                                userRemoteConfigs: [[credentialsId: 'admingithub', url: 'git@github.com:gem-abhay/gitleaks_jenkins.git']]])
+                                userRemoteConfigs: [[credentialsId: 'jenkins_token', url: 'https://github.com/Jalendhar10/gitleaks_jenkins.git']]])
                 }
         stage('Permission'){
               sh"chmod +x FinalScript.sh"

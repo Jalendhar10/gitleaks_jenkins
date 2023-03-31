@@ -12,9 +12,8 @@ node('gitleaks_image') {
             sh'''./FinalScript.sh'''
             sh 'ls -la'
           }
-        }  
-           
-          catch (Exception Error){
+  }
+   } catch (Exception Error){
            echo "${Error}"
         }
 }

@@ -9,7 +9,7 @@ RUN cd /home/tools/
 RUN mkdir Leaks_Reports
 WORKDIR /home/tools/
 RUN  git clone https://github.com/zricethezav/gitleaks.git
-WORKDIR /home/tools/gitleaks
+RUN cd /home/tools/gitleaks
 ENV  GOROOT=/usr/local/go 
 ENV  GOPATH=$HOME/Projects/Proj1
 ENV  PATH=$GOPATH/bin:$GOROOT/bin:$PATH 
